@@ -1,0 +1,17 @@
+{
+  "name": "municibid",
+  "owner": {
+    "name": "Municibid",
+    "email": "support@municibid.com"
+  },
+  "metadata": {
+    "description": "Municibid plugin marketplace: search public government surplus auctions."
+  },
+  "plugins": [
+    {
+      "name": "municibid",
+      "source": ".",
+      "description": "Search public government surplus auctions on Municibid."
+    }
+  ]
+}

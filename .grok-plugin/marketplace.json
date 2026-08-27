@@ -1,0 +1,25 @@
+{
+  "name": "municibid",
+  "owner": {
+    "name": "Municibid",
+    "email": "support@municibid.com"
+  },
+  "metadata": {
+    "description": "Municibid connector for Grok Bot: search public government surplus auctions."
+  },
+  "plugins": [
+    {
+      "name": "municibid",
+      "source": ".",
+      "version": "1.0.0",
+      "description": "Search public government surplus auctions on Municibid.",
+      "homepage": "https://www.municibid.com",
+      "keywords": [
+        "municibid",
+        "government surplus",
+        "public auctions"
+      ],
+      "logo": "assets/logo.svg"
+    }
+  ]
+}
