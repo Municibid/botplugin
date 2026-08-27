@@ -1,11 +1,11 @@
 {
   "name": "municibid",
+  "displayName": "Municibid",
   "version": "1.0.0",
   "description": "Search public government surplus auctions on Municibid. Review listing details, sold comps, informational market-value ranges, and public agency summaries.",
   "author": {
     "name": "Municibid",
-    "email": "support@municibid.com",
-    "url": "https://www.municibid.com"
+    "email": "support@municibid.com"
   },
   "homepage": "https://www.municibid.com",
   "repository": "https://github.com/Municibid/botplugin",

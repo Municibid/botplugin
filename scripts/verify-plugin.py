@@ -115,6 +115,11 @@ def check_cursor_and_grok() -> None:
     cursor = load_json(ROOT / ".cursor-plugin/plugin.json")
     if cursor.get("name") != "municibid":
         fail(".cursor-plugin/plugin.json: name must be municibid")
+    if cursor.get("displayName") != "Municibid":
+        fail(".cursor-plugin/plugin.json: displayName must be Municibid")
+    author = cursor.get("author") or {}
+    if set(author) - {"name", "email"}:
+        fail(".cursor-plugin/plugin.json: author allows only name and email")
     if cursor.get("logo") != "assets/logo.svg":
         fail(".cursor-plugin/plugin.json: logo path")
     if cursor.get("homepage") != "https://www.municibid.com":
@@ -124,12 +129,23 @@ def check_cursor_and_grok() -> None:
     plugins = market.get("plugins") or []
     if not plugins or plugins[0].get("name") != "municibid":
         fail(".cursor-plugin/marketplace.json: missing municibid plugin")
-    if plugins and plugins[0].get("source") != ".":
+        return
+    entry = plugins[0]
+    allowed = {"name", "source", "description"}
+    extra = set(entry) - allowed
+    if extra:
+        fail(f".cursor-plugin/marketplace.json: plugin entry extra fields {sorted(extra)}")
+    if set(entry) != allowed:
+        fail(".cursor-plugin/marketplace.json: plugin entry must be name, source, description")
+    if entry.get("source") != ".":
         fail(".cursor-plugin/marketplace.json: source must be .")
 
     grok = load_json(ROOT / ".grok-plugin/plugin.json")
     if grok.get("name") != "municibid":
         fail(".grok-plugin/plugin.json: name must be municibid")
+    grok_author = grok.get("author") or {}
+    if set(grok_author) - {"name", "email"}:
+        fail(".grok-plugin/plugin.json: author allows only name and email")
 
 
 def check_skill() -> None:
