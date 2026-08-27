@@ -174,6 +174,9 @@ def parse_sse_json(body: str) -> dict:
     return json.loads(body)
 
 
+UA = "municibid-plugin-verify/1.0"
+
+
 def mcp_post(payload: dict) -> dict:
     request = urllib.request.Request(
         MCP_URL,
@@ -182,6 +185,7 @@ def mcp_post(payload: dict) -> dict:
             "Content-Type": "application/json",
             "Accept": "application/json, text/event-stream",
             "MCP-Protocol-Version": "2025-03-26",
+            "User-Agent": UA,
         },
         method="POST",
     )
@@ -191,7 +195,11 @@ def mcp_post(payload: dict) -> dict:
 
 
 def check_live_mcp() -> None:
-    get_req = urllib.request.Request(MCP_URL, method="GET")
+    get_req = urllib.request.Request(
+        MCP_URL,
+        headers={"Accept": "application/json, text/event-stream", "User-Agent": UA},
+        method="GET",
+    )
     try:
         with urllib.request.urlopen(get_req, timeout=20) as resp:
             fail(f"GET /mcp expected 405, got {resp.status}")
