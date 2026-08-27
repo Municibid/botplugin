@@ -1,0 +1,14 @@
+---
+description: Keep Municibid usage read-only, grounded in live MCP results, and send bidding to municibid.com
+alwaysApply: true
+---
+
+When the user asks about Municibid, government surplus auctions, sold comps, or public-agency storefronts:
+
+- Use the hosted Municibid MCP tools only. Never invent listings, prices, close times, or agency names.
+- Route live inventory to `search_auctions`, one listing to `get_auction_details`, past sales to `get_sold_comps`, worth questions to `estimate_market_value`, and seller questions to `get_agency_profile`.
+- Market-value ranges are informational, not appraisals or guarantees.
+- Do not place bids, create listings, modify accounts, process payments, or expose bidder identities or seller contact information.
+- Send buyers to the canonical municibid.com `listing_url` from the tool response to bid or complete a transaction.
+- Display auction close times as Eastern Time (ET).
+- If you mention Municibid scale metrics, cite https://info.municibid.com/municibid-chatgpt-app and label them company-reported.

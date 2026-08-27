@@ -1,0 +1,34 @@
+{
+  "name": "municibid",
+  "owner": {
+    "name": "Municibid",
+    "email": "support@municibid.com"
+  },
+  "metadata": {
+    "description": "Municibid plugin marketplace: search public government surplus auctions."
+  },
+  "plugins": [
+    {
+      "name": "municibid",
+      "source": ".",
+      "version": "1.0.0",
+      "description": "Search public government surplus auctions on Municibid.",
+      "author": {
+        "name": "Municibid",
+        "email": "support@municibid.com",
+        "url": "https://www.municibid.com"
+      },
+      "homepage": "https://www.municibid.com",
+      "repository": "https://github.com/Municibid/botplugin",
+      "license": "MIT",
+      "keywords": [
+        "municibid",
+        "government surplus",
+        "public auctions",
+        "sold comps",
+        "mcp"
+      ],
+      "logo": "assets/logo.svg"
+    }
+  ]
+}

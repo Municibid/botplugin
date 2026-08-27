@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "municibid": {
+      "type": "http",
+      "url": "https://ai.municibid.com/mcp"
+    }
+  }
+}
